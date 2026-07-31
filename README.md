@@ -334,16 +334,31 @@ O projeto pode ser acessado tanto pela versão publicada na nuvem quanto executa
 
 A aplicação pode ser acessada através do ambiente hospedado.
 
-> **Interface (Lovable)**
+> **Base de Conhecimento e Dados para verificação (Airtable)**
 
 ```text
-[INSERIR LINK DA APLICAÇÃO]
+Visualização Pública da Base de Dados (Acesso direto à tabela de beneficiários, eventos e inscrições):
+https://airtable.com/app4n39xq6cu1fIub/shrbs3eyH5FzFdXdT 
 ```
 
-> **Agente Inteligente (Dify)**
+> **Links de Acesso ao Front-End e Interface (Lovable)**
 
 ```text
-[INSERIR LINK DO AGENTE]
+Aplicação Pública (Deploy – Para Testes): 
+https://vida-plena-copilot.lovable.app
+
+Painel de Desenvolvimento e Edição (Evidência Interna): 
+https://lovable.dev/projects/58009588-93b2-4e02-928e-2c9770d6af16?magic_link=mc_4d835f46-f306-42bd-bf47-dab832b21347
+```
+
+> **Links de Acesso à IA e Orquestração (Dify AI)**
+
+```text
+Interface de Chat Pública (Para Testes):
+https://udify.app/chat/AMZoxPDjiqOXRQJZ
+
+Painel de Configuração e Orquestração (Evidência Interna):
+https://cloud.dify.ai/installed/811cf257-8992-4d4a-8deb-2688f47a38a5
 ```
 
 ---
