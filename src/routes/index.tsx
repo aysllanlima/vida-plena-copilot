@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useRef, useState } from "react";
 import { Send, Loader2, UsersRound } from "lucide-react";
 import { Sidebar } from "@/components/copilot/Sidebar";
 import { MessageBubble, type ChatMessage } from "@/components/copilot/MessageBubble";
+import { askDify } from "@/lib/dify.functions";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
