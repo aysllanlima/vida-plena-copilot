@@ -29,15 +29,13 @@ export const Route = createFileRoute("/")({
   component: CopilotPage,
 });
 
-const DIFY_URL = "https://api.dify.ai/v1/chat-messages";
-const DIFY_KEY = "app-l0sr3eeWEqUhvpDnlhcAip5J";
-
 function CopilotPage() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const ask = useServerFn(askDify);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
@@ -56,28 +54,8 @@ function CopilotPage() {
     setLoading(true);
 
     try {
-      const response = await fetch(DIFY_URL, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${DIFY_KEY}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          inputs: {},
-          query: query,
-          response_mode: "blocking",
-          conversation_id: "",
-          user: "admin-ong",
-        }),
-      });
-
-      if (!response.ok) throw new Error(`Erro ${response.status}`);
-
-      const data = await response.json();
-      setMessages((prev) => [
-        ...prev,
-        { role: "assistant", content: data.answer ?? "Não foi possível obter uma resposta." },
-      ]);
+      const data = await ask({ data: { query } });
+      setMessages((prev) => [...prev, { role: "assistant", content: data.answer }]);
     } catch (error) {
       setMessages((prev) => [
         ...prev,
@@ -92,6 +70,7 @@ function CopilotPage() {
       setLoading(false);
     }
   }
+
 
   return (
     <div className="flex h-screen w-full bg-background text-foreground">
