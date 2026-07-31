@@ -471,7 +471,7 @@ Entre as possibilidades previstas estão:
 ## Vídeo Pitch
 
 ```text
-[INSERIR LINK DO VÍDEO]
+[https://youtu.be/m_9dyKvVN6w]
 ```
 
 ---
