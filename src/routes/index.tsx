@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { Send, Loader2, Leaf } from "lucide-react";
+import { Send, Loader2, UsersRound } from "lucide-react";
 import { Sidebar } from "@/components/copilot/Sidebar";
 import { MessageBubble, type ChatMessage } from "@/components/copilot/MessageBubble";
 
@@ -104,7 +104,7 @@ function CopilotPage() {
       <main className="flex min-w-0 flex-1 flex-col">
         <header className="flex items-center gap-3 border-b border-border bg-card/70 px-6 py-4 backdrop-blur">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[image:var(--gradient-primary)] text-primary-foreground md:hidden">
-            <Leaf className="h-4 w-4" />
+            <UsersRound className="h-4 w-4" />
           </span>
           <div>
             <h1 className="text-base font-semibold">Vida Plena Copilot</h1>
@@ -117,7 +117,7 @@ function CopilotPage() {
             {messages.length === 0 && !loading && (
               <div className="mt-16 text-center">
                 <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[image:var(--gradient-primary)] text-primary-foreground shadow-[var(--shadow-soft)]">
-                  <Leaf className="h-7 w-7" />
+                  <UsersRound className="h-7 w-7" />
                 </span>
                 <h2 className="mt-5 text-xl font-semibold">Como posso ajudar hoje?</h2>
                 <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
